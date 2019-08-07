@@ -12,7 +12,7 @@ import xlwt
 from datetime import datetime
 from scrapy.utils.project import get_project_settings
 import os
-from metacriticbot.items import Movie
+from metacriticbot.items import Summary
 
 settings = get_project_settings()
 

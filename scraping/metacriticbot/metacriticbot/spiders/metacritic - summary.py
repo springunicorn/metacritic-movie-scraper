@@ -2,7 +2,7 @@ import scrapy
 from scrapy.selector import Selector
 from scrapy.http import Request
 import json
-from metacriticbot.items import Movie
+from metacriticbot.items import Summary
 
 #Helper functions
 def safe_extract(selector, xpath_query):
