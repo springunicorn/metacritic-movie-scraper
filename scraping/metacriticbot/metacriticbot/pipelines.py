@@ -21,20 +21,19 @@ class MetacriticbotPipeline(object):
         #so that userscore resembles metascore 0..100 scale
         #some non-numeric values such as 'tbd' are left out
         #for the sake of uniformity
-        # try:
-        #     item['user_score'] = int(float(item['user_score'])*10)
-        # except ValueError:
-        #     item['user_score'] = 'NA'
-        #convert to Year-month-day format
-        # if item['datePublished'] != 'NA' and item['datePublished'] != 'TBA':
-            # item['datePublished'] = datetime.strptime(item['datePublished'], '%B %d, %Y').strftime('%Y-%m-%d')
-        #leave only N out of "N Ratings" for user ratings
-        #item['user_reviews_count'] = item['user_reviews_count'].split()[2]
+        try:
+            item['user_score'] = int(float(item['user_score'])*10)
+        except ValueError:
+            item['user_score'] = 'NA'
+        # convert to Year-month-day format
+        if item['datePublished'] != 'NA' and item['datePublished'] != 'TBA':
+            item['datePublished'] = datetime.strptime(item['datePublished'], '%B %d, %Y').strftime('%Y-%m-%d')
+        # leave only N out of "N Ratings" for user ratings
+        item['user_reviews_count'] = item['user_reviews_count'].split()[2]
         return item
 
+
 class XlsExportPipeline(object):
-
-
     def __init__(self):
         dispatcher.connect(self.spider_opened, signals.spider_opened)
         dispatcher.connect(self.spider_closed, signals.spider_closed)

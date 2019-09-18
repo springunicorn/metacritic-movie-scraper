@@ -7,57 +7,29 @@
 
 import scrapy
 
-USER_AGENT = "Mozilla/5.0 (X11; Linux i686; rv:24.0) Gecko/20140903 Firefox/24.0 Iceweasel/24.8.0"
+USER_AGENT = "Mozilla/5.0 (X11; Linux i686; rv:24.0) "\
+           + "Gecko/20140903 Firefox/24.0 Iceweasel/24.8.0"
 
-class Game(scrapy.Item):
+
+class Movie(scrapy.Item):
     # define the fields for your item here like:
     # name = scrapy.Field()
 
     # General info
-    title = scrapy.Field()
+    name = scrapy.Field()
     link = scrapy.Field()
-    release_date = scrapy.Field()
-    developer = scrapy.Field()
+    datePublished = scrapy.Field()
+    director = scrapy.Field()
     publisher = scrapy.Field()
-    platform = scrapy.Field()
+    actor = scrapy.Field()
     maturity_rating = scrapy.Field()
     genre = scrapy.Field()
-    genre_tags = scrapy.Field()
-    #scores
     metascore = scrapy.Field()
     critics_reviews_count = scrapy.Field()
     user_score = scrapy.Field()
     user_reviews_count = scrapy.Field()
+    description = scrapy.Field()
 
-# class Movie(scrapy.Item):
-#     # define the fields for your item here like:
-#     # name = scrapy.Field()
-#
-#     # General info
-#     name = scrapy.Field()
-#     link = scrapy.Field()
-#     datePublished = scrapy.Field()
-#     director = scrapy.Field()
-#     publisher = scrapy.Field()
-#     actor = scrapy.Field()
-#     maturity_rating = scrapy.Field()
-#     genre = scrapy.Field()
-#     # genre_tags = scrapy.Field()
-#     #scores
-#     metascore = scrapy.Field()
-#     critics_reviews_count = scrapy.Field()
-#     user_score = scrapy.Field()
-#     user_reviews_count = scrapy.Field()
-#     description = scrapy.Field()
-
-class Movie(scrapy.Item):
-    name = scrapy.Field()
-    link = scrapy.Field()
-    datePublished = scrapy.Field()
-    sources = scrapy.Field()
-    authors = scrapy.Field()
-    scores = scrapy.Field()
-    summary = scrapy.Field()
 
 class Summary(scrapy.Item):
     name = scrapy.Field()
