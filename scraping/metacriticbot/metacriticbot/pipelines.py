@@ -50,6 +50,7 @@ class XlsExportPipeline(object):
     #write header
     def spider_opened(self, spider):
         item = Movie()
+        # item = Summary()
         keys = item.fields.keys() #item.keys to get field names
         for index, key in enumerate(keys):
             self.sheet.write(self.row_number, index, key) # row, column, value

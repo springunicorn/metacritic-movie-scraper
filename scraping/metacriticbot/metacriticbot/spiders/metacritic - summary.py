@@ -1,3 +1,14 @@
+
+# To use the summary bot, do the following:
+# 1. Uncomment metacritic - summary.py (except this block comment)
+# 2. Comment out metacritic - original.py
+# 3. In pipelines.py, comment out line 52 (item = Movie())
+#    and uncomment line 53 (item = Summery())
+# 4. Comment out every line in MetacriticbotPipeline.process_item from
+#    pipelines.py except the return statement.
+# 5. Now run bot using the same command to run the orignial bot.
+
+
 # import scrapy
 # from scrapy.selector import Selector
 # from scrapy.http import Request
@@ -41,7 +52,7 @@
 #     5. Go to next genre.
 #     6. Repeat.
 #     """
-#     name = "metacritic_summary"
+#     name = "metacritic"
 #     allowed_domains = ["metacritic.com"]
 #     start_urls = [
 #             "https://www.metacritic.com/browse/movies/genre/date/action?view=detailed"
