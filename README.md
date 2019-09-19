@@ -16,4 +16,4 @@ Python
 * xlwt
 
 # Note
-The original bot cannot scrape some of the descriptions correctly without accessing the detail page of movie. Read metacritic - summary.py for more information.
+The original bot cannot scrape some of the descriptions correctly without accessing the detail page of movie. Read `metacritic-movie-scraping/scraping/metacriticbot/metacriticbot/spiders/metacritic - summary.py` for more information.
